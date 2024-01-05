@@ -1,4 +1,3 @@
-import { Skeleton } from '@chakra-ui/react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -6,7 +5,7 @@ import { routes } from './routes';
 
 const Routings = () => {
   return (
-    <Suspense fallback={<Skeleton />}>
+    <Suspense fallback={<p>Loading...</p>}>
       <Routes>
         {routes.map((routeProps) => (
           <Route {...routeProps} key={routeProps.path as string} />

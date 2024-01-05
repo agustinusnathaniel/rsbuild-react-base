@@ -1,4 +1,3 @@
-import { Box, Button, Flex, Image, Link } from '@chakra-ui/react';
 import { AiFillGithub } from 'react-icons/ai';
 
 const repoName = 'rsbuild-react-chakra-starter';
@@ -6,60 +5,51 @@ const repoLink = `https://github.com/sozonome/${repoName}`;
 
 const CTASection = () => {
   return (
-    <Box textAlign="center" marginTop={8}>
-      <Flex marginY={4} justifyContent="center" gridGap={2}>
-        <Link
+    <div>
+      <div>
+        <a
           aria-label="Deploy to Vercel"
-          isExternal
+          target="_blank"
+          rel="noopener noreferrer"
           href={`https://vercel.com/import/git?s=${repoLink}`}
         >
-          <Image src="https://vercel.com/button" alt="Vercel deploy button" />
-        </Link>
+          <img src="https://vercel.com/button" alt="Vercel deploy button" />
+        </a>
 
-        <Link
+        <a
           aria-label="Deploy to Netlify"
-          isExternal
+          target="_blank"
+          rel="noopener noreferrer"
           href={`https://app.netlify.com/start/deploy?repository=${repoLink}`}
         >
-          <Image
+          <img
             src="https://www.netlify.com/img/deploy/button.svg"
             alt="Netlify deploy button"
           />
-        </Link>
-      </Flex>
+        </a>
+      </div>
 
-      <Box marginY={2}>
-        <Button
-          marginTop={2}
-          as={Link}
-          href={`${repoLink}/generate`}
-          isExternal
-          size="sm"
-          colorScheme="teal"
-        >
-          Use This Template
-        </Button>
-      </Box>
+      <a
+        href={`${repoLink}/generate`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Use This Template
+      </a>
 
-      <Flex justifyContent="center" alignItems="center" gridGap={2}>
-        <Button
-          as={Link}
-          href={repoLink}
-          isExternal
-          leftIcon={<AiFillGithub />}
-          size="sm"
-        >
+      <div>
+        <a href={repoLink} target="_blank" rel="noopener noreferrer">
+          <AiFillGithub />
           Open in Github
-        </Button>
-        <Link href={repoLink} isExternal>
-          <Image
-            align="center"
+        </a>
+        <a href={repoLink} target="_blank" rel="noopener noreferrer">
+          <img
             src={`https://img.shields.io/github/stars/sozonome/${repoName}?style=social`}
             alt="github stars"
           />
-        </Link>
-      </Flex>
-    </Box>
+        </a>
+      </div>
+    </div>
   );
 };
 
