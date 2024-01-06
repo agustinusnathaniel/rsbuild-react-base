@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@fontsource/plus-jakarta-sans": "^5.0.18",
+    "million": "^2.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
