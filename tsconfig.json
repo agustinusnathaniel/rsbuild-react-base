@@ -21,6 +21,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "incremental": true
   },
   "include": [
