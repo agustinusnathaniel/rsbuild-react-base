@@ -22,12 +22,7 @@ export default defineConfig({
     rspack: {
       plugins: [
         million.webpack({ auto: true }),
-        process.env.RSDOCTOR &&
-          new RsdoctorRspackPlugin({
-            features: {
-              loader: false,
-            },
-          }),
+        process.env.RSDOCTOR && new RsdoctorRspackPlugin(),
       ].filter(Boolean),
     },
   },
