@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 // fonts
 import '@fontsource/plus-jakarta-sans/latin.css';
 
-import App from './App';
+import App from './app';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
