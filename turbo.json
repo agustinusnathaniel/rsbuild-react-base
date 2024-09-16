@@ -9,8 +9,11 @@
       "outputs": [],
       "inputs": ["biome.json", "src/**"]
     },
+    "biome:ci": {
+			"outputs": [],
+			"inputs": ["biome.json", "src/**"]
+		},
     "build": {
-      "dependsOn": ["type:check", "biome:check"],
       "outputs": ["dist/**", "public/**"],
       "env": []
     }
