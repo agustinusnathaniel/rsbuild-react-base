@@ -1,7 +1,7 @@
 import { AiFillGithub } from 'react-icons/ai';
 
 const repoName = 'rsbuild-react-chakra-starter';
-const repoLink = `https://github.com/sozonome/${repoName}`;
+const repoLink = `https://github.com/agustinusnathaniel/${repoName}`;
 
 export const CTASection = () => {
   return (
@@ -44,7 +44,7 @@ export const CTASection = () => {
         </a>
         <a href={repoLink} target="_blank" rel="noopener noreferrer">
           <img
-            src={`https://img.shields.io/github/stars/sozonome/${repoName}?style=social`}
+            src={`https://img.shields.io/github/stars/agustinusnathaniel/${repoName}?style=social`}
             alt="github stars"
           />
         </a>
