@@ -1,14 +1,17 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter as Router } from 'react-router';
 
 import { Layout } from '@/lib/layout';
 import { Routings } from '@/lib/router/routings';
 
 export const App = () => {
   return (
-    <Router>
-      <Layout>
-        <Routings />
-      </Layout>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <Layout>
+          <Routings />
+        </Layout>
+      </Router>
+    </HelmetProvider>
   );
 };

@@ -2,7 +2,7 @@
 
 This is a project bootstrapped with [`create-react-app`](https://create-react-app.dev/), converted to rsbuild, added with [Chakra UI](https://chakra-ui.com) and [TypeScript](https://www.typescriptlang.org) setup.
 
-- 🔗 route management added (`react-router-dom` configured)
+- 🔗 route management added (`react-router` configured)
 
 [**Live Demo**](https://rsbuild-react-chakra-starter.sznm.dev/)
 
