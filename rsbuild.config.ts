@@ -6,33 +6,36 @@ import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 
-export default defineConfig({
-  // https://rsbuild.dev/plugins/list/index
-  plugins: [
-    pluginReact(),
-    pluginSvgr(),
-    pluginAssetsRetry(),
-    pluginTypeCheck(),
-    pluginImageCompress(),
-  ],
-  html: {
-    template: './public/index.html',
-  },
-  tools: {
-    // https://rsbuild.dev/config/plugins#rspack-plugins
-    rspack(_config, { appendPlugins }) {
-      // Only register the plugin when RSDOCTOR is true, as the plugin will increase the build time.
-      if (process.env.RSDOCTOR) {
-        appendPlugins(
-          new RsdoctorRspackPlugin({
-            // plugin options
-          }),
-        );
-      }
+export default defineConfig(({ envMode }) => {
+  const isCheckDisabled = envMode === 'production' || !!process.env.RSDOCTOR;
+  return {
+    // https://rsbuild.dev/plugins/list/index
+    plugins: [
+      pluginReact(),
+      pluginSvgr(),
+      pluginAssetsRetry(),
+      pluginTypeCheck({ enable: !isCheckDisabled }),
+      pluginImageCompress(),
+    ],
+    html: {
+      template: './public/index.html',
     },
-  },
-  server: {
-    // https://rsbuild.dev/config/server/open
-    open: true,
-  },
+    tools: {
+      // https://rsbuild.dev/config/plugins#rspack-plugins
+      rspack(_config, { appendPlugins }) {
+        // Only register the plugin when RSDOCTOR is true, as the plugin will increase the build time.
+        if (process.env.RSDOCTOR) {
+          appendPlugins(
+            new RsdoctorRspackPlugin({
+              // plugin options
+            }),
+          );
+        }
+      },
+    },
+    server: {
+      // https://rsbuild.dev/config/server/open
+      open: true,
+    },
+  };
 });
