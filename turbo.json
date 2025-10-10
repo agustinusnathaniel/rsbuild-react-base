@@ -16,6 +16,9 @@
     "build": {
       "outputs": ["dist/**", "public/**"],
       "env": []
+    },
+    "test": {
+      "inputs": ["rstest.config.ts", "src/**"]
     }
   }
 }

@@ -8,7 +8,8 @@ import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { tanstackRouter } from '@tanstack/router-plugin/rspack';
 
 export default defineConfig(({ envMode }) => {
-  const isCheckDisabled = envMode === 'production' || !!process.env.RSDOCTOR;
+  const isCheckDisabled =
+    envMode === 'production' || !!process.env.RSDOCTOR || !!process.env.RSTEST;
   return {
     // https://rsbuild.dev/plugins/list/index
     plugins: [
