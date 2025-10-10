@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "agustinusnathaniel",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=22.16.x"
   },
@@ -10,20 +11,12 @@
   "pnpm": {
     "neverBuiltDependencies": []
   },
-  "dependencies": {
-    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-helmet-async": "^2.0.5",
-    "react-icons": "^5.5.0",
-    "react-router": "^7.9.4"
-  },
   "scripts": {
     "dev": "rsbuild dev",
     "build": "rsbuild build",
     "build-and-analyze": "cross-env RSDOCTOR=true pnpm build",
     "preview": "rsbuild preview",
-    "biome:check": "biome check",
+    "biome:check": "biome check --no-errors-on-unmatched --error-on-warnings",
     "biome:fix": "pnpm biome:check --write",
     "biome:ci": "biome ci",
     "type:check": "tsc --noEmit",
@@ -36,17 +29,13 @@
     "prepare": "husky",
     "knip": "knip"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "@tanstack/react-router": "^1.132.47",
+    "@tanstack/react-router-devtools": "^1.132.51",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
@@ -61,6 +50,7 @@
     "@rsbuild/plugin-svgr": "1.2.2",
     "@rsbuild/plugin-type-check": "1.2.4",
     "@rsdoctor/rspack-plugin": "^1.3.1",
+    "@tanstack/router-plugin": "^1.132.51",
     "@types/node": "^24.7.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",

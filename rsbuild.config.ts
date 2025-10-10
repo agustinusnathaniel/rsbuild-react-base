@@ -5,6 +5,7 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
+import { tanstackRouter } from '@tanstack/router-plugin/rspack';
 
 export default defineConfig(({ envMode }) => {
   const isCheckDisabled = envMode === 'production' || !!process.env.RSDOCTOR;
@@ -31,6 +32,12 @@ export default defineConfig(({ envMode }) => {
             }),
           );
         }
+        appendPlugins(
+          tanstackRouter({
+            target: 'react',
+            autoCodeSplitting: true,
+          }),
+        );
       },
     },
     server: {

@@ -1,6 +1,6 @@
 import { AiFillGithub } from 'react-icons/ai';
 
-const repoName = 'rsbuild-react-chakra-starter';
+const repoName = 'rsbuild-react-base';
 const repoLink = `https://github.com/agustinusnathaniel/${repoName}`;
 
 export const CTASection = () => {

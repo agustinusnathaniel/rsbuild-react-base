@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from '@tanstack/react-router';
 
 const Page404 = () => {
   const navigate = useNavigate();
 
-  const handleBackToHome = () => navigate('/');
+  const handleBackToHome = () => navigate({ to: '/' });
 
   return (
     <div>

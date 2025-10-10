@@ -2,10 +2,11 @@
   "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
   "files": {
     "includes": [
-      "**/src/**",
-      "**/*.config.ts",
-      "!**/node_modules",
-      "!**/.turbo"
+      "src/**/*",
+      "*.config.ts",
+      "*.{js,ts,json,md}",
+      "!**/*.gen.ts",
+      "!.turbo"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },

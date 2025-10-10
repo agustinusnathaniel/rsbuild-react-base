@@ -10,9 +10,9 @@
       "inputs": ["biome.json", "src/**"]
     },
     "biome:ci": {
-			"outputs": [],
-			"inputs": ["biome.json", "src/**"]
-		},
+      "outputs": [],
+      "inputs": ["biome.json", "src/**"]
+    },
     "build": {
       "outputs": ["dist/**", "public/**"],
       "env": []
