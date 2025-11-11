@@ -1,11 +1,14 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginAssetsRetry } from '@rsbuild/plugin-assets-retry';
+import { pluginBabel } from '@rsbuild/plugin-babel';
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { pluginTypeCheck } from '@rsbuild/plugin-type-check';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { tanstackRouter } from '@tanstack/router-plugin/rspack';
+
+const reactCompileFilePattern = /\.(?:jsx|tsx)$/;
 
 export default defineConfig(({ envMode }) => {
   const isCheckDisabled =
@@ -14,6 +17,12 @@ export default defineConfig(({ envMode }) => {
     // https://rsbuild.dev/plugins/list/index
     plugins: [
       pluginReact(),
+      pluginBabel({
+        include: reactCompileFilePattern,
+        babelLoaderOptions(opts) {
+          opts.plugins?.unshift('babel-plugin-react-compiler');
+        },
+      }),
       pluginSvgr(),
       pluginAssetsRetry(),
       pluginTypeCheck({ enable: !isCheckDisabled }),
