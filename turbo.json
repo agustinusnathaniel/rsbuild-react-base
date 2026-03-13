@@ -5,7 +5,7 @@
       "inputs": ["tsconfig.json", "src/**"],
       "outputs": ["*.tsbuildinfo"]
     },
-    "biome:check": {
+    "ultracite:check": {
       "outputs": [],
       "inputs": ["biome.json", "src/**"]
     },

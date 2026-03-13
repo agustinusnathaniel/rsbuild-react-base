@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
 // fonts
@@ -8,10 +8,10 @@ import '@/lib/styles/globals.css';
 import { App } from './app';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
+  document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>
 );

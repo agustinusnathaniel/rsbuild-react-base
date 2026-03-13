@@ -2,6 +2,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 
 import { routeTree } from './routeTree.gen';
 import '@/lib/styles/globals.css';
+
 import Page404 from './lib/pages/404';
 
 // Set up a Router instance

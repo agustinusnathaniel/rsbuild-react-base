@@ -1,48 +1,42 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.6/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/remix"
+  ],
   "files": {
+    "ignoreUnknown": false,
     "includes": [
       "src/**/*",
+      "!src/*.gen.ts",
+      "!turbo",
+      "!src/lib/components/ui/**/*",
+      "!src/lib/hooks/use-mobile.*",
       "*.config.ts",
-      "*.{js,ts,json,md}",
-      "!**/*.gen.ts",
-      "!.turbo"
+      "!**/*.css",
+      "!stats.html",
+      "!test-results/*.json"
     ]
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
+    "enabled": true,
     "indentStyle": "space"
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
-      "a11y": {
-        "useSemanticElements": "error"
-      },
-      "complexity": {
-        "noExcessiveCognitiveComplexity": "error",
-        "noUselessStringConcat": "error",
-        "noUselessUndefinedInitialization": "error",
-        "useSimplifiedLogicExpression": "error",
-        "noVoid": "warn"
-      },
       "correctness": {
-        "noUnusedImports": "error",
-        "noUnusedVariables": "error",
-        "noUnusedFunctionParameters": "error",
-        "useHookAtTopLevel": "error"
-      },
-      "nursery": {},
-      "performance": {
-        "noBarrelFile": "error",
-        "useTopLevelRegex": "error"
+        "useImageSize": "off"
       },
       "style": {
-        "noDefaultExport": "error",
-        "useBlockStatements": "error",
-        "useCollapsedElseIf": "error",
-        "useDefaultSwitchClause": "error",
+        "useConsistentTypeDefinitions": "off",
         "useConsistentArrayType": {
           "level": "error",
           "options": {
@@ -55,12 +49,6 @@
             "filenameCases": ["kebab-case"]
           }
         }
-      },
-      "suspicious": {
-        "noConsole": "error",
-        "noEmptyBlockStatements": "error",
-        "useAwait": "error",
-        "noDuplicateElseIf": "error"
       }
     }
   },
@@ -71,7 +59,7 @@
   },
   "overrides": [
     {
-      "includes": ["**/src/lib/pages/**/*", "**/*.ts"],
+      "includes": ["src/lib/pages/**/index.tsx", "src/*.ts", "*.ts"],
       "linter": {
         "rules": {
           "style": {
@@ -79,6 +67,35 @@
           }
         }
       }
+    },
+    {
+      "includes": ["src/routes/**/*"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
     }
-  ]
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":URL:", ":NODE:", ":PACKAGE:"],
+              ":BLANK_LINE:",
+              [":ALIAS:"],
+              ":BLANK_LINE:",
+              [":PATH:"]
+            ]
+          }
+        }
+      }
+    }
+  }
 }

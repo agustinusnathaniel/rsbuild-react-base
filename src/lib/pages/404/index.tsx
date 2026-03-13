@@ -10,11 +10,11 @@ const Page404 = () => {
       <h1>Page not Found</h1>
 
       <div>
-        <img alt="404" width={400} src="/assets/404 Error-rafiki.svg" />
+        <img alt="404" src="/assets/404 Error-rafiki.svg" width={400} />
         <a
           href="https://stories.freepik.com/web"
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
         >
           Illustration by Freepik Stories
         </a>
@@ -22,7 +22,7 @@ const Page404 = () => {
 
       <div>
         <p>It&apos;s Okay!</p>
-        <button type="button" onClick={handleBackToHome}>
+        <button onClick={handleBackToHome} type="button">
           Let&apos;s Head Back
         </button>
       </div>

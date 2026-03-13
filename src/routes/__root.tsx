@@ -1,7 +1,7 @@
 import { createRootRoute, HeadContent, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
-import { Layout } from '@/lib/layout';
+import { Layout } from '@/lib/layout/index';
 
 const title = 'rsbuild-react-base';
 const description = 'app starter template';

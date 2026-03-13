@@ -9,43 +9,43 @@ export const CTASection = () => {
       <div>
         <a
           aria-label="Deploy to Vercel"
-          target="_blank"
-          rel="noopener noreferrer"
           href={`https://vercel.com/import/git?s=${repoLink}`}
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <img src="https://vercel.com/button" alt="Vercel deploy button" />
+          <img alt="Vercel deploy button" src="https://vercel.com/button" />
         </a>
 
         <a
           aria-label="Deploy to Netlify"
-          target="_blank"
-          rel="noopener noreferrer"
           href={`https://app.netlify.com/start/deploy?repository=${repoLink}`}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           <img
-            src="https://www.netlify.com/img/deploy/button.svg"
             alt="Netlify deploy button"
+            src="https://www.netlify.com/img/deploy/button.svg"
           />
         </a>
       </div>
 
       <a
         href={`${repoLink}/generate`}
-        target="_blank"
         rel="noopener noreferrer"
+        target="_blank"
       >
         Use This Template
       </a>
 
       <div>
-        <a href={repoLink} target="_blank" rel="noopener noreferrer">
+        <a href={repoLink} rel="noopener noreferrer" target="_blank">
           <AiFillGithub />
           Open in Github
         </a>
-        <a href={repoLink} target="_blank" rel="noopener noreferrer">
+        <a href={repoLink} rel="noopener noreferrer" target="_blank">
           <img
-            src={`https://img.shields.io/github/stars/agustinusnathaniel/${repoName}?style=social`}
             alt="github stars"
+            src={`https://img.shields.io/github/stars/agustinusnathaniel/${repoName}?style=social`}
           />
         </a>
       </div>

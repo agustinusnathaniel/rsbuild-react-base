@@ -39,14 +39,14 @@ export default defineConfig(({ envMode }) => {
           appendPlugins(
             new RsdoctorRspackPlugin({
               // plugin options
-            }),
+            })
           );
         }
         appendPlugins(
           tanstackRouter({
             target: 'react',
             autoCodeSplitting: true,
-          }),
+          })
         );
       },
     },

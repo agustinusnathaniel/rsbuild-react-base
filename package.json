@@ -16,13 +16,13 @@
     "build": "rsbuild build",
     "build-and-analyze": "cross-env RSDOCTOR=true pnpm build",
     "preview": "rsbuild preview",
-    "biome:check": "biome check --no-errors-on-unmatched --error-on-warnings",
-    "biome:fix": "pnpm biome:check --write",
+    "ultracite:check": "ultracite check",
+    "ultracite:fix": "ultracite fix",
     "biome:ci": "biome ci",
     "type:check": "tsc --noEmit",
     "test": "rstest",
     "turbo": "pnpm dlx turbo@2.7.2",
-    "check:turbo": "pnpm turbo biome:check type:check test",
+    "check:turbo": "pnpm turbo ultracite:check type:check test",
     "up-interactive": "pnpm up -i",
     "up-latest": "pnpm up-interactive -L",
     "release": "cross-env HUSKY=0 standard-version",
@@ -39,7 +39,7 @@
     "react-icons": "^5.6.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.5",
     "@commitlint/cli": "^20.4.4",
     "@commitlint/config-conventional": "^20.4.4",
     "@commitlint/cz-commitlint": "^20.4.4",
@@ -65,6 +65,7 @@
     "jsdom": "^28.1.0",
     "knip": "^5.86.0",
     "lint-staged": "^16.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "ultracite": "7.2.5"
   }
 }
