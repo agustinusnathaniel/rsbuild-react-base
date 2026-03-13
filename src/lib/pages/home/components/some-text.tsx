@@ -1,8 +1,12 @@
 export const SomeText = () => {
   return (
-    <div>
-      <h2>rsbuild-react-base</h2>
-      <p>This is a React app project with Rsbuild and TypeScript setup.</p>
+    <div className="grid gap-2.5">
+      <h1 className="bg-linear-to-br from-gray-200 to-teal-700 bg-clip-text font-bold text-2xl text-transparent md:text-3xl">
+        rsbuild-react-base
+      </h1>
+      <p className="text-gray-500 text-xs md:text-sm">
+        This is a Rsbuild react template with TailwindCSS and TypeScript setup.
+      </p>
     </div>
   );
 };

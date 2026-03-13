@@ -1,16 +1,18 @@
 export const Footer = () => {
   return (
-    <footer>
-      <p>
-        {new Date().getFullYear()} -{' '}
-        <a
-          href="https://agustinusnathaniel.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          agustinusnathaniel.com
-        </a>
-      </p>
+    <footer className="wrapper">
+      <div className="flex">
+        <p className="text-xs">
+          {new Date().getFullYear()} -{' '}
+          <a
+            href="https://agustinusnathaniel.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            agustinusnathaniel.com
+          </a>
+        </p>
+      </div>
     </footer>
   );
 };
